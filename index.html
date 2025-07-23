@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Authentication Screen -->
+        <div class="auth-screen" id="authScreen">
+            <div class="auth-card">
+                <div class="logo">
+                    <i class="fas fa-comments"></i>
+                    <h1>Nexus Chat</h1>
+                </div>
+                <div class="auth-form">
+                    <input type="text" id="usernameInput" placeholder="Choose a username" autocomplete="off">
+                    <button id="joinButton">Join Chat</button>
+                    <p id="usernameError" class="error-message"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Chat Interface -->
+        <div class="chat-container" id="chatContainer">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h2>Chat Rooms</h2>
+                    <button id="createRoomBtn"><i class="fas fa-plus"></i> New Room</button>
+                </div>
+                <div class="room-search">
+                    <input type="text" placeholder="Search rooms..." id="roomSearch">
+                </div>
+                <div class="room-list" id="roomList">
+                    <!-- Rooms will be added dynamically -->
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar" id="userAvatar">U</div>
+                    <span id="currentUsername">User</span>
+                </div>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="main-chat">
+                <div class="chat-header" id="chatHeader">
+                    <h3>Select a room to start chatting</h3>
+                </div>
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will appear here -->
+                </div>
+                <div class="message-input-container">
+                    <div class="formatting-tools">
+                        <button class="format-btn" data-format="bold"><i class="fas fa-bold"></i></button>
+                        <button class="format-btn" data-format="italic"><i class="fas fa-italic"></i></button>
+                        <button class="format-btn" data-format="link"><i class="fas fa-link"></i></button>
+                    </div>
+                    <input type="text" id="messageInput" placeholder="Type your message here..." disabled>
+                    <button id="sendButton" disabled><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Room Modal -->
+        <div class="modal" id="createRoomModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Create New Room</h3>
+                <input type="text" id="newRoomName" placeholder="Room name">
+                <button id="confirmCreateRoom">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
